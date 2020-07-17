@@ -496,9 +496,6 @@ button:focus,
     margin-top : 50px;
     }
 
-#message-text {
-    resize: none; 
-}
 
 /*-------------------
  * Form Style
@@ -513,6 +510,7 @@ button:focus,
     border-radius : 0;
     box-shadow    : none;
     box-sizing    : border-box;
+    resize        : none;
     }
 
 .form-control:focus,
