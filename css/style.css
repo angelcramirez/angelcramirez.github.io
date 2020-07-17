@@ -510,8 +510,11 @@ button:focus,
     border-radius : 0;
     box-shadow    : none;
     box-sizing    : border-box;
-    resize        : none;
     }
+
+textarea {
+    resize        : none;
+}
 
 .form-control:focus,
 .form-control:active {
