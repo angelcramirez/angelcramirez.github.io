@@ -61,9 +61,9 @@
 
             <p class="lead">Front-End Developer</p>
             <ul class="social-icon">
-                <li><a href="https://www.linkedin.com/in/angel-caleb-ramirez-3a21b451/" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
-                <li><a href="skype:acdz19?chat"><i class="fab fa-skype" aria-hidden="true"></i></a></li>
-                <li><a href="./documents/Angel Ramirez_ResumeWeb.pdf" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Download Resume"><i class="far fa-file-pdf" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/angel-caleb-ramirez-3a21b451/" target="_blank"><i class="fab fa-linkedin-in fa-2x" aria-hidden="true"></i></a></li>
+                <li><a href="skype:acdz19?chat"><i class="fab fa-skype fa-2x" aria-hidden="true"></i></a></li>
+                <li><a href="./documents/Angel Ramirez_ResumeWeb.pdf" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Download Resume"><i class="far fa-file-pdf fa-2x" aria-hidden="true"></i></a></li>
             </ul>
         </div>
         <div class="profile-img"></div>
@@ -91,7 +91,7 @@
                 </p>
 
                 <p>
-                    Commended as an active team player, I would describe myself best with a motto: <span class="highlight">"Working better".</span> This is the philosophy, I follow in business and in life, 
+                    Commended as an active team player, I would describe myself best with a motto: <span class="highlight">"Working better".</span> This is the philosophy I follow in business and in life, 
                     and which means that there is always a way to bring joy and quality work, when you give others something in return, as a form of gratitude. For me, it is knowledge power. 
                 </p>  
                 <p>
@@ -363,7 +363,7 @@
             <div class="col-md-6">
                 <a class="portfolio-item" href="https://github.com/angelcramirez/MyWeb-Practices/" target="_blank">
                     <div class="portfolio-thumb">
-                        <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2018/05/qu%C3%A9-es-github-1.png" alt="">
+                        <img src="./img/github.png" alt="">
                     </div>
 
                     <div class="portfolio-info">
@@ -396,7 +396,7 @@
 
                 <address>
                     <strong>Mobile Number</strong><br>
-                    <img src="https://img.icons8.com/officel/25/000000/whatsapp.png"/>+521 8182 76 8086
+                    <img src="https://img.icons8.com/officel/25/000000/whatsapp.png"/><a href="tel:+5218182768086">+521 8182 76 8086</a>
                 </address>
                 
             </div>
@@ -409,24 +409,24 @@
 
                     <form id="ajaxForm" accept-charset="UTF-8" action="https://formcarry.com/s/b4CCC2tVxeuT" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="InputName">Name</label>
+                            <label for="InputName">Name <strong style="color: red;"> *</strong></label>
                             <input type="text" name="name" required="" class="form-control" id="InputName"
-                                   placeholder="Full Name">
+                                   maxlength="50" placeholder="Full Name">
                         </div>
                         <div class="form-group">
-                            <label for="InputEmail">Email address</label>
+                            <label for="InputEmail">Email address<strong style="color: red;"> *</strong></label>
                             <input type="email" name="email" required="" class="form-control" id="InputEmail"
-                                   placeholder="Email">
+                                   maxlength="40" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label for="InputSubject">Subject</label>
                             <input type="text" name="subject" class="form-control" id="InputSubject"
-                                   placeholder="Subject">
+                                   maxlength="100" placeholder="Subject">
                         </div>
                         <div class="form-group">
-                            <label for="message-text" class="control-label">Message</label>
+                            <label for="message-text" class="control-label">Message<strong style="color: red;"> *</strong></label>
                             <textarea class="form-control" rows="4" required="" name="message" id="message-text"
-                                      placeholder="Write message"></textarea>
+                                      maxlength="1250" placeholder="Write message"></textarea>
                         </div>
                         <input type="hidden" id="captchaResponse" name="g-recaptcha-response" />
                         
