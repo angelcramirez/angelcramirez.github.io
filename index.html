@@ -30,8 +30,11 @@
     <![endif]-->
 	
     <!-- reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-	
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY"></script>
+    
+    <!-- AJAX jQuery API -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar">
 
@@ -404,7 +407,7 @@
                 <div class="feedback-form">
                     <h2 style="color: #2A54F5;">Get in touch</h2>
 
-                    <form id="contactForm" accept-charset="UTF-8" action="https://usebasin.com/f/67fbe11da5f8" method="POST">
+                    <form id="ajaxForm" accept-charset="UTF-8" action="https://formcarry.com/s/b4CCC2tVxeuT" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="InputName">Name</label>
                             <input type="text" name="name" required="" class="form-control" id="InputName"
@@ -425,10 +428,9 @@
                             <textarea class="form-control" rows="4" required="" name="message" id="message-text"
                                       placeholder="Write message"></textarea>
                         </div>
-                        <input type="hidden" name="_gotcha"/>
+                        <input type="hidden" id="captchaResponse" name="g-recaptcha-response" />
                         
-                        <div class="g-recaptcha" data-sitekey="6Lew3SMUAAAAAJ82QoS7gqOTkRI_dhYrFy1f7Sqy"></div>
-                        <button type="submit" class="btn btn-primary" data-sitekey="6Lew3SMUAAAAAJ82QoS7gqOTkRI_dhYrFy1f7Sqy" data-callback='onSubmit' data-badge="inline">Submit</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                         
                     </form>
                 </div>
@@ -476,15 +478,36 @@
 
 <!-- reCAPTCHA -->
 <script>
-	document.getElementById("feedback-form").addEventListener("submit", function(){
-		event.preventDefault();
-		grecaptcha.reset();
-		grecaptcha.execute();
-	}, false);
-	function onSubmit(token) {
-		document.getElementById("feedback-form").submit();
-	}
+	grecaptcha.ready(function() {
+		grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'})
+		.then(function(token) {
+			document.getElementById('captchaResponse').value = token;
+		});
+	});
 </script>
+
+<!-- Formcarry Redirect URL -->
+<script>
+    $(function(){
+    $("#ajaxForm").submit(function(e){
+        e.preventDefault();
+        var href = $(this).attr("action");
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: href,
+            data: $(this).serialize(),
+            success: function(response){
+                if(response.status == "success"){
+                    window.location.href = 'https://angelcramirez.github.io/thank-you.html'; // change this. 
+                }else{
+                    alert("An error occured: " + response.message);
+                }
+            }
+        });
+    });
+    });
+    </script>
 
 </body>
 </html>
