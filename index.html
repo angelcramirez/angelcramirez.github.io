@@ -504,7 +504,6 @@
 <!-- reCAPTCHA Script. Token will not expire until you interact with form -->
 <script>
 function submitForm() {
-alert('La forma se fue');
 document.getElementById('ajaxForm').submit();
 
 }
@@ -519,7 +518,7 @@ document.getElementById('ajaxForm').submit();
 
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
 document.getElementById('captchaResponse').value = token; 
-submitForm();
+setTimeout(function(){submitForm();}, 3000);
         });        
       }, false);
 
