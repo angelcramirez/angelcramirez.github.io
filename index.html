@@ -506,7 +506,7 @@
      $(document).ready(function(){
         setInterval(function(){
         grecaptcha.ready(function() {
-            grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'home'}).then(function(token) {
+            grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
                 $('#captchaResponse').val(token);
             });
         });
