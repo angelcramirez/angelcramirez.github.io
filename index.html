@@ -536,13 +536,13 @@ document.getElementById('ajaxForm').submit();
             url: href,
             data: $(this).serialize(),
             success: function(response){
-alert(response.status);
                 if(response.status == "success"){
                     window.location.href = 'http://google.com'; // change this. 
                 }else{
                     alert("An error occured: " + response.message);
                 }
             }
+alert(response.status);
         });
     });
     });
