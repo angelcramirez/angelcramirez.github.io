@@ -432,18 +432,13 @@ button:focus,
     position      : relative;
     display       : block;
     margin-bottom : 30px;
-    height        : auto;
     }
 
 .portfolio-item .portfolio-thumb img {
+    height    : auto;
     display   : block;
     max-width : 100%;
     }
-
-.portfolio-thumb img{
-    height: 132.78px;
-    width: 235.83px;
-}
 
 .portfolio-item .portfolio-info {
     position   : absolute;
