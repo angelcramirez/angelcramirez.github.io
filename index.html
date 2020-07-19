@@ -430,7 +430,7 @@
                         </div>
                         <input type="hidden" id="captchaResponse" name="g-recaptcha-response" />
                         
-                        <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                        <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
                         
                     </form>
                 </div>
@@ -476,16 +476,16 @@
 <!-- Disable Submit button until all required fields are filled -->
 <script>
     $(function (){
-        $('#submit').attr('disabled', true);
+        $('#submit-btn').attr('disabled', true);
     });
 
     var fields = "#InputName, #InputEmail, #message-text";
 
     $(fields).keyup(function() {
         if (allFilled()) {
-            $('#submit').removeAttr('disabled');
+            $('#submit-btn').removeAttr('disabled');
     } else {
-        $('#submit').attr('disabled', 'disabled');
+        $('#submit-btn').attr('disabled', 'disabled');
     }
     });
 
@@ -503,16 +503,6 @@
 
 <!-- reCAPTCHA Script. Token will not expire until you interact with form -->
 <script>
-function submitForm() {
-grecaptcha.ready(function() {
-		grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'})
-		.then(function(token) {
-			document.getElementById('captchaResponse').value = token;
-		});
-	});
-
-}
-
   grecaptcha.ready(function() {
       document.getElementById('ajaxForm').addEventListener("submit", function(event) {
 
@@ -523,7 +513,6 @@ grecaptcha.ready(function() {
 
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
 document.getElementById('captchaResponse').value = token; 
-setTimeout(function(){submitForm();}, 3000);
 document.getElementById('ajaxForm').submit();
         });        
       }, false);
