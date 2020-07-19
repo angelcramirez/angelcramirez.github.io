@@ -31,8 +31,7 @@
 	
     <!-- reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js?render=6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY"></script>
-    <script  src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
+    
     <!-- AJAX jQuery API -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
@@ -503,17 +502,30 @@
 </script>
 
 <!-- reCAPTCHA Script. Token will not expire until you interact with form -->
-<script type="text/javascript">
-     $(document).ready(function(){
-        setInterval(function(){
-        grecaptcha.ready(function() {
-            grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
-                $('#captchaResponse').val(token);
-            });
-        });
-        }, 60000); //you can set timeout for expired.
-     });
-     
+<script>
+  grecaptcha.ready(function() {
+      document.getElementById('ajaxForm').addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
+           document.getElementById('captchaResponse').value = token; 
+           document.getElementById('ajaxForm').submit();
+        });        
+      }, false);
+
+  });
+
+
+grecaptcha.ready(function() {
+		grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'})
+		.then(function(token) {
+			document.getElementById('captchaResponse').value = token;
+		});
+	});
+
+
+
 </script>
 
 
@@ -539,6 +551,8 @@
     });
     });
     </script>
+
+
 
 </body>
 </html>
