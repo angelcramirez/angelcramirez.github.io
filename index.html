@@ -513,7 +513,6 @@
 
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
 document.getElementById('captchaResponse').value = token;
-document.getElementById('ajaxForm').submit();
         });        
       }, false);
 
@@ -526,6 +525,7 @@ document.getElementById('ajaxForm').submit();
 <!-- Formcarry Redirect URL -->
 <script>
     $(function(){
+    $(document).ready(function(){
     $("#ajaxForm").submit(function(e){
         e.preventDefault();
         var href = $(this).attr("action");
@@ -536,10 +536,8 @@ document.getElementById('ajaxForm').submit();
             url: href,
             data: $(this).serialize(),
             success: function(response){
-alert("Ya llegue");
-console.log(response.status);
                 if(response.status == "success"){
-                    window.location.href = 'http://google.com'; // change this. 
+                    window.location.href = 'https://angelcramirez.github.io/'; // change this. 
                 }else{
                     alert("An error occured: " + response.message);
                 }
@@ -547,6 +545,7 @@ console.log(response.status);
         });
     });
     });
+});
 </script>
 
 
