@@ -430,7 +430,7 @@
                         </div>
                         <input type="hidden" id="captchaResponse" name="g-recaptcha-response" />
                         
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" id="submit">Submit</button>
                         
                     </form>
                 </div>
@@ -472,6 +472,35 @@
 <!-- Bootstrap -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/scripts.js"></script>
+
+<!-- Disable Submit button until all required fields are filled -->
+
+<script>
+    $(function (){
+        $('#submit').attr('disabled', true);
+    });
+
+    var fields = "#InputName, #InputEmail, #message-text";
+
+    $(fields).keyup(function() {
+        if (allFilled()) {
+            $('#submit').removeAttr('disabled');
+    } else {
+        $('#submit').attr('disabled', 'disabled');
+    }
+    });
+
+    function allFilled() {
+        var filled = true;
+        $(fields).each(function() {
+            if ($(this).val() == '') {
+                filled = false;
+            }
+        });
+        return filled;
+}
+   
+</script>
 
 <!-- reCAPTCHA -->
 <script>
