@@ -536,6 +536,7 @@ document.getElementById('ajaxForm').submit();
             url: href,
             data: $(this).serialize(),
             success: function(response){
+alert("Ya llegue");
 console.log(response.status);
                 if(response.status == "success"){
                     window.location.href = 'http://google.com'; // change this. 
