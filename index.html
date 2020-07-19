@@ -474,7 +474,6 @@
 <script src="js/scripts.js"></script>
 
 <!-- Disable Submit button until all required fields are filled -->
-
 <script>
     $(function (){
         $('#submit').attr('disabled', true);
@@ -502,14 +501,20 @@
    
 </script>
 
-<!-- reCAPTCHA -->
+<!-- reCAPTCHA Script. If token expired, refresh every ~3 minutes -->
 <script>
-	grecaptcha.ready(function() {
+        function getReCaptcha(){
+	   grecaptcha.ready(function() {
 		grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'})
 		.then(function(token) {
 			document.getElementById('captchaResponse').value = token;
 		});
-	});
+	   });
+        }
+
+       getReCaptcha();  // This is the initial call
+       setInterval(function(){getReCaptcha();}, 150000);
+
 </script>
 
 <!-- Formcarry Redirect URL -->
