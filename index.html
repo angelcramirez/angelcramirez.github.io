@@ -526,8 +526,6 @@ document.getElementById('ajaxForm').submit();
 <!-- Formcarry Redirect URL -->
 <script>
     $(function(){
-    $("#ajaxForm").submit(function(e){
-        e.preventDefault();
         var href = $(this).attr("action");
         $.ajax({
             type: "POST",
@@ -542,7 +540,6 @@ document.getElementById('ajaxForm').submit();
                 }
             }
         });
-    });
     });
     </script>
 
