@@ -502,24 +502,19 @@
 </script>
 
 <!-- reCAPTCHA Script. Token will not expire until you interact with form -->
-<script>
-    grecaptcha.ready(function() {
-        document.getElementById('ajaxForm').addEventListener("submit", function(event) {
-
-            event.preventDefault();
-
-            grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
-                document.getElementById('captchaResponse').value = token; 
-                document.getElementById('ajaxForm').submit();
+<script type="text/javascript">
+     $(document).ready(function(){
+        setInterval(function(){
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'home'}).then(function(token) {
+                $('#captchaResponse').val(token);
             });
-
-        }, false);
-
-  });
-
+        });
+        }, 3000); //you can set timeout for expired.
+     });
+     
 </script>
-	
-</script>
+
 
 <!-- Formcarry Redirect URL -->
 <script>
