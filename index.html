@@ -525,7 +525,7 @@ document.getElementById('captchaResponse').value = token;
 <!-- Formcarry Redirect URL -->
 <script>
     $(function(){
-    $(".ajaxForm").submit(function(){
+    $("#ajaxForm").submit(function(){
         var href = $(this).attr("action");
         $.ajax({
             type: "POST",
@@ -534,7 +534,7 @@ document.getElementById('captchaResponse').value = token;
             data: $(this).serialize(),
             success: function(response){
                 if(response.status == "success"){
-                    window.location.href = 'http://google.com'; // change this. 
+                    window.location.href = 'https://angelcramirez.github.io/thank-you.html'; // change this. 
                 }else{
                     alert("An error occured: " + response.message);
                 }
