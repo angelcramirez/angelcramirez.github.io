@@ -3,7 +3,7 @@ urlRedirectJS = null;
 
 $(function() {
     function urlRedirect() {
-        $(document).ready(function(){
+        $(function(){
             $("#ajaxForm").submit(function(e){
                 e.preventDefault();
                 var href = $(this).attr("action");
