@@ -13,6 +13,9 @@
     <!-- web-fonts -->
     <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
 
+    <!-- font-awesome -->
+    <link href="./css/all.css" rel="stylesheet">
+
     <!-- Bootstrap -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,9 +31,9 @@
 	
     <!-- reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js?render=6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY"></script>
-
-<!-- font-awesome -->
-<script src="https://kit.fontawesome.com/36dfc443ab.js" crossorigin="anonymous"></script>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
     
 </head>
@@ -59,9 +62,9 @@
 
             <p class="lead">Front-End Developer</p>
             <ul class="social-icon">
-                <li><a href="https://www.linkedin.com/in/angel-caleb-ramirez-3a21b451/" target="_blank"><i class="fab fa-linkedin-in fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="skype:acdz19?chat"><i class="fab fa-skype fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="./documents/Angel Ramirez_ResumeWeb.pdf" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Download Resume"><i class="far fa-file-pdf fa-2x" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/angel-caleb-ramirez-3a21b451/" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                <li><a href="skype:acdz19?chat"><i class="fab fa-skype" aria-hidden="true"></i></a></li>
+                <li><a href="./documents/Angel Ramirez_ResumeWeb.pdf" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Download Resume"><i class="far fa-file-pdf" aria-hidden="true"></i></a></li>
             </ul>
         </div>
         <div class="profile-img"></div>
@@ -414,7 +417,7 @@
                         <div class="form-group">
                             <label for="InputEmail">Email address<strong style="color: red;"> *</strong></label>
                             <input type="email" name="email" required="" class="form-control" id="InputEmail"
-                                   maxlength="40" placeholder="Email">
+                                   maxlength="50" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label for="InputSubject">Subject</label>
@@ -424,7 +427,7 @@
                         <div class="form-group">
                             <label for="message-text" class="control-label">Message<strong style="color: red;"> *</strong></label>
                             <textarea class="form-control" rows="4" required="" name="message" id="message-text"
-                                      maxlength="1250" placeholder="Write message"></textarea>
+                                      maxlength="1100" placeholder="Write message"></textarea>
                         </div>
                         <input type="hidden" id="captchaResponse" name="g-recaptcha-response" />
                         
@@ -464,86 +467,16 @@
 </div>
 <!-- #main-wrapper -->
 
+<!-- font-awesome -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+
 <!-- Bootstrap -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/scripts.js"></script>
 
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
-
-<!-- Disable Submit button until all required fields are filled -->
-<script>
-    $(function (){
-        $('#submit-btn').attr('disabled', true);
-    });
-
-    var fields = "#InputName, #InputEmail, #message-text";
-
-    $(fields).keyup(function() {
-        if (allFilled()) {
-            $('#submit-btn').removeAttr('disabled');
-    } else {
-        $('#submit-btn').attr('disabled', 'disabled');
-    }
-    });
-
-    function allFilled() {
-        var filled = true;
-        $(fields).each(function() {
-            if ($(this).val() == '') {
-                filled = false;
-            }
-        });
-        return filled;
-    }
-   
-</script>
-
-<!-- reCAPTCHA Script. Token will not expire until you interact with form -->
-<script>
-  grecaptcha.ready(function() {
-      document.getElementById('ajaxForm').addEventListener("submit", function(event) {
-
-        event.preventDefault();
-
-
-        
-
-        grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
-document.getElementById('captchaResponse').value = token;
-        });        
-      }, false);
-
-  });
-
-
-</script>
-
-
-<!-- Formcarry Redirect URL -->
-<script>
-    $(function(){
-    $("#ajaxForm").submit(function(e){
-        e.preventDefault();
-        var href = $(this).attr("action");
-
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: href,
-            data: $(this).serialize(),
-            success: function(response){
-                if(response.status == "success"){
-                    window.location.href = 'https://angelcramirez.github.io/thank-you.html'; // change this. 
-                }else{
-                    alert("An error occured: " + response.message);
-                }
-            }
-        });
-    });
-    });
-</script>
+<!-- gRecaptcha Scripts -->
+<script src="js/grecaptcha.js"></script>
 
 
 </body>
