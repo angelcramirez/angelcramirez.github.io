@@ -30,7 +30,7 @@ $(function() {
 
 
 // Form Submit
-function formSubmit(){
+var formSubmit = function(){
     document.getElementById('submit-btn').click();
     urlRedirectJS();
 }
