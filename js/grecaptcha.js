@@ -31,8 +31,6 @@ $(function() {
 
 
 // reCAPTCHA Script. Token will not expire until you interact with form
-const submitButton = document.getElementById('submit-btn');
-
 grecaptcha.ready(function() {
 
     document.getElementById('ajaxForm').addEventListener("submit", function(event) {
@@ -40,6 +38,8 @@ grecaptcha.ready(function() {
 
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
            document.getElementById('captchaResponse').value = token;
+           const submitButton = document.getElementById('submit-btn');
+
            submitButton.click();
            submitButton.disabled = true;
            urlRedirectJS();
