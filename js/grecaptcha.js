@@ -34,21 +34,19 @@ $(function() {
 const submitButton = document.getElementById('submit-btn');
 
 grecaptcha.ready(function() {
-
-    document.getElementById('ajaxForm').addEventListener("submit", function(event) {
+      document.getElementById('ajaxForm').addEventListener("submit", function(event) {
         event.preventDefault();
 
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
-           document.getElementById('captchaResponse').value = token;
+           document.getElementById('captchaResponse').value = token; 
            submitButton.click();
            urlRedirectJS();
 
            submitButton.disabled = true;
-           
         });        
-    }, false);
-});
+      }, false);
 
+  });
 
 
 
