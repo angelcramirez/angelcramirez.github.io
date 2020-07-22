@@ -46,7 +46,7 @@ grecaptcha.ready(function() {
         });        
       }, false);
 
-  });
+});
 
 
 
