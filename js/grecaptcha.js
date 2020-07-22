@@ -40,6 +40,7 @@ grecaptcha.ready(function() {
         document.getElementById('captchaResponse').value = token;
         urlRedirectJS();
         document.getElementById('submit-btn').click();
+        document.getElementById('submit-btn').setAttribute('disabled', 'disabled');
     });        
     }, false);
 });
