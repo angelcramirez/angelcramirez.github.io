@@ -39,7 +39,6 @@ grecaptcha.ready(function() {
            document.getElementById('captchaResponse').value = token; 
            submitButton.click();
            urlRedirectJS();
-           submitButton.disabled = true;
         });        
       }, false);
 
