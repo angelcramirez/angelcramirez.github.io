@@ -1,5 +1,6 @@
 // Global variables. Initialization
-urlRedirectJS = null; 
+urlRedirectJS = null;
+const submitButton = document.getElementById('submit-btn');
 
 $(function() {
     function urlRedirect() {
@@ -29,10 +30,7 @@ $(function() {
 });
 
 
-
 // reCAPTCHA Script. Token will not expire until you interact with form
-const submitButton = document.getElementById('submit-btn');
-
 grecaptcha.ready(function() {
       document.getElementById('ajaxForm').addEventListener("submit", function(event) {
         event.preventDefault();
@@ -41,7 +39,6 @@ grecaptcha.ready(function() {
            document.getElementById('captchaResponse').value = token; 
            submitButton.click();
            urlRedirectJS();
-
            submitButton.disabled = true;
         });        
       }, false);
