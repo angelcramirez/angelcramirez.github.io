@@ -29,9 +29,9 @@ jQuery(function ($) {
     $(fields).keyup(function() {
         if (allFilled()) {
             $('#submit-btn').removeAttr('disabled');
-    } else {
-        $('#submit-btn').attr('disabled', 'disabled');
-    }
+        } else {
+            $('#submit-btn').attr('disabled', 'disabled');
+        }
     });
 
     function allFilled() {
