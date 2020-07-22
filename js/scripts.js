@@ -90,4 +90,4 @@ jQuery(function ($) {
         });
     };
     
-    $( "ajaxForm" ).each( createAllErrors );
+    $( "form" ).each( createAllErrors );
