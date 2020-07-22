@@ -31,18 +31,19 @@ $(function() {
 
 
 // reCAPTCHA Script. Token will not expire until you interact with form
+const submitButton = document.getElementById('submit-btn');
+
 grecaptcha.ready(function() {
-    const submitButton = document.getElementById('submit-btn');
 
     document.getElementById('ajaxForm').addEventListener("submit", function(event) {
-    event.preventDefault();
+        event.preventDefault();
 
-    grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
-        document.getElementById('captchaResponse').value = token;
-        submitButton.click();
-        submitButton.disabled = true;
-        urlRedirectJS();
-    });        
+        grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
+           document.getElementById('captchaResponse').value = token;
+           submitButton.click();
+           submitButton.disabled = true;
+           urlRedirectJS();
+        });        
     }, false);
 });
 
