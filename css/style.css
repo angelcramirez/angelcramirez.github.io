@@ -20,11 +20,18 @@ body {
     background  : #ffffff;
     }
 
+.white-space {
+   height: 70px;
+   background: #ffffff;
+}
+
 /* Hide reCAPTCHA Badge */
 
 .grecaptcha-badge { 
     visibility: hidden;
 }
+
+
 
 
 /* --------------------------------------
