@@ -29,6 +29,8 @@ $(function() {
 
 });
 
+if(submitButton.disabled)
+    Alert("Button is disabled");
 
 // reCAPTCHA Script. Token will not expire until you interact with form
         grecaptcha.ready(function() {
@@ -42,8 +44,4 @@ $(function() {
             }, false);
              }
         });
-
-submitButton.disabled = true;
-
-
 
