@@ -31,22 +31,25 @@ $(function() {
 
 
 // reCAPTCHA Script. Token will not expire until you interact with form
-grecaptcha.ready(function() {
     if (submitButton.disabled){
              submitButton.disable = true;
-             alert("Disabled");
-    }else{
-    document.getElementById('ajaxForm').addEventListener("submit", function(event) {
-        grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
-           document.getElementById('captchaResponse').value = token;
+    }else
+            onSubmit();
             urlRedirectJS();
-            submitButton.click();
-             submitButton.disable = true; 
-        });        
-    }
-      }, false);
+            submitButton.disable = true;
+     }
+     
+  function onSubmit(){
+      e.preventDefault();
+        grecaptcha.ready(function() {
+            document.getElementById('ajaxForm').addEventListener("submit", function(event) {
+                  grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
+                       document.getElementById('captchaResponse').value = token;
+                   });        
+            }, false);
 
-});
+        });
+  }
 
 
 
