@@ -32,10 +32,10 @@ $(function() {
 
 // reCAPTCHA Script. Token will not expire until you interact with form
 grecaptcha.ready(function() {
-    if (document.getElementById('submit-btn').disabled){
+    if (submitButton.disabled){
              submitButton.disable = true;
              alert("Disabled");
-    else{
+    }else{
     document.getElementById('ajaxForm').addEventListener("submit", function(event) {
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
            document.getElementById('captchaResponse').value = token;
