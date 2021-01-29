@@ -40,8 +40,6 @@ grecaptcha.ready(function() {
            urlRedirectJS();
            submitButton.click();
             
-           submitButton.disabled = true;
-
         });        
       }, false);
 
