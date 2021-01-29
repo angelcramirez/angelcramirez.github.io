@@ -41,15 +41,10 @@ $(function() {
             
                 urlRedirectJS();
                 submitButton.click();
-                submitButton.disable = true;
-            
-            if(submitButton.disabled){
-                submitButton.disable = false;
-                urlRedirectJS();
-                submitButton.click();
-                submitButton.disable = true;
              }
         });
+
+submitButton.disabled = true;
 
 
 
