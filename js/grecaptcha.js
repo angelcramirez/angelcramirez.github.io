@@ -31,23 +31,21 @@ $(function() {
 
 
 // reCAPTCHA Script. Token will not expire until you interact with form
-    if (submitButton.disabled){
-             submitButton.disable = true;
-    }else
-            onSubmit();
-            urlRedirectJS();
-            submitButton.disable = true;
-     }
-     
-  function onSubmit(){
-      e.preventDefault();
         grecaptcha.ready(function() {
             document.getElementById('ajaxForm').addEventListener("submit", function(event) {
+                event.preventDefault();
                   grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
                        document.getElementById('captchaResponse').value = token;
                    });        
             }, false);
-
+            
+            if(submitButton.disabled)
+                submitButton.disable = true;
+            else{
+                urlRedirectJS();
+                submitButton.click();
+                submitButton.disable = true;
+             }
         });
   }
 
