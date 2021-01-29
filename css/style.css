@@ -612,7 +612,3 @@ textarea {
     text-align : center;
     top        : 65%;
     }
-
-.has-error textarea, .has-error input[type="text"], .has-error input[type="email"] {
-    border: 1px solid #a94442;
-}
