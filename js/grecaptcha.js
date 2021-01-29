@@ -32,20 +32,18 @@ $(function() {
 
 // reCAPTCHA Script. Token will not expire until you interact with form
 grecaptcha.ready(function() {
+    if (document.getElementById('submit-btn').disabled){
+             submitButton.disable = true;
+             alert("Disabled");
+    else{
     document.getElementById('ajaxForm').addEventListener("submit", function(event) {
-        event.preventDefault();
-
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
            document.getElementById('captchaResponse').value = token;
-            
-            if (this.$btn="disabled")
-             submitButton.disable = true;
-           else{
-           submitButton.disable = false;
-           urlRedirectJS();
-           }
-         
+            urlRedirectJS();
+            submiButton.click();
+             submitButton.disable = true; 
         });        
+    }
       }, false);
 
 });
