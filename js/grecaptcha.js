@@ -39,15 +39,17 @@ $(function() {
                    });        
             }, false);
             
-            if(submitButton.disabled)
+                urlRedirectJS();
+                submitButton.click();
                 submitButton.disable = true;
-            else{
+            
+            if(submitButton.disabled){
+                submitButton.disable = false;
                 urlRedirectJS();
                 submitButton.click();
                 submitButton.disable = true;
              }
         });
-  }
 
 
 
