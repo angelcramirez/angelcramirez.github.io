@@ -6,7 +6,7 @@ $(function() {
     function urlRedirect() {
         $(function(){
             if($("#submit-btn").attr('disabled')) return false;
-            else 
+            else {
                 $("#ajaxForm").submit(function(e){
                 e.preventDefault();
                 var href = $(this).attr("action");
@@ -23,7 +23,8 @@ $(function() {
                         }
                     }
                 });
-            $(this).find(':submit').attr( 'disabled','disabled' );
+                $(this).find(':submit').attr( 'disabled','disabled' );
+                }
             });
         });
 
