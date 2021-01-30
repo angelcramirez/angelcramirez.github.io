@@ -25,7 +25,7 @@ $(function() {
                   });
                });
                 $("#submit-btn").click();
-                $(this).find(':submit').attr( 'disabled','disabled' );
+                $(this).find(':submit').toggleClass('disabled');
               
             }
         });
