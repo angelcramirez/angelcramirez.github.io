@@ -24,9 +24,10 @@ $(function() {
                     }
                   });
                });
+                $(this).find(':submit').attr( 'disabled','disabled' );
+            }
         });
-            $(this).find(':submit').attr( 'disabled','disabled' );
-        }
+          
 
         submitButton.click();
     }
