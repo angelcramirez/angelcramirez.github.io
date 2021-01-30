@@ -5,7 +5,7 @@ const submitButton = document.getElementById('submit-btn');
 $(function() {
     function urlRedirect() {
         $(function(){
-            if($("#submit-btn").attr('disabled')) return false;
+            if($("#submit-btn").attr('disabled')) console.log('The button is disabled');
             else {
                 $("#ajaxForm").submit(function(e){
                 e.preventDefault();
