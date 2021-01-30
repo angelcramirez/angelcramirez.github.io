@@ -25,9 +25,6 @@ $(function() {
             });
         });
 
-        if(submitButton.disabled){
-           submitButton.disabled = false;
-        }
         submitButton.click();
     }
     
