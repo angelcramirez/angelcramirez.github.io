@@ -26,6 +26,7 @@ $(function() {
                });
                 $("#submit-btn").click();
                 $(this).find(':submit').attr( 'disabled','disabled' );
+                console.log('The button was disabled');
             }
         });
     }
