@@ -32,7 +32,6 @@ $(function() {
 
 submitButton.addEventListener("click", function() {
    buttonClicked = true;
-    console.log(buttonClicked);
 });
 
 // reCAPTCHA Script. Token will not expire until you interact with form
