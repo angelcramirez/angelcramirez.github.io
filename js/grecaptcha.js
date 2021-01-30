@@ -34,9 +34,9 @@ function buttonClicked(){
     submitButton.addEventListener("click",function() {
         clicked = true;
     });
-    return clicked;
     console.log(clicked);
     console.log("El boton esta disabled");
+    return clicked;
 }
 
 // reCAPTCHA Script. Token will not expire until you interact with form
