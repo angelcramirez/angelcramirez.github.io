@@ -44,7 +44,7 @@ grecaptcha.ready(function() {
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
            document.getElementById('captchaResponse').value = token;
             
-            if(buttonClicked) console.log("El boton esta disabled2");
+            if(submitButton.disabled && buttonClicked) console.log("El boton esta disabled2");
             else{
                 urlRedirectJS();
                 submitButton.click();
