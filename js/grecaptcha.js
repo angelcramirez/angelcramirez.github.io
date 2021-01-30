@@ -44,7 +44,6 @@ grecaptcha.ready(function() {
             if(submitButton.disabled && buttonClicked) return false; {
             }else {
                 urlRedirectJS();
-                submitButton.click();
                 submitButton.disabled = true;
             }
         });        
