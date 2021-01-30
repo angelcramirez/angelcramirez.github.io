@@ -22,6 +22,7 @@ $(function() {
                         }
                     }
                 });
+            $(this).find(':submit').attr( 'disabled','disabled' );
             });
         });
     }
@@ -39,7 +40,6 @@ grecaptcha.ready(function() {
            document.getElementById('captchaResponse').value = token;
                 urlRedirectJS();
             
-        });
-         return false;        
+        });        
       }, false);
 });
