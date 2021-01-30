@@ -24,12 +24,10 @@ $(function() {
                     }
                   });
                });
+                submitButton.click();
                 $(this).find(':submit').attr( 'disabled','disabled' );
             }
         });
-          
-
-        submitButton.click();
     }
     
     urlRedirectJS = urlRedirect;
