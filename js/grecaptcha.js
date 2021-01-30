@@ -24,7 +24,7 @@ $(function() {
                     }
                   });
                });
-                submitButton.click();
+                $("#submit-btn").click();
                 $(this).find(':submit').attr( 'disabled','disabled' );
             }
         });
