@@ -1,6 +1,6 @@
 // Global variables. Initialization
 urlRedirectJS = null;
-var clicked = false;
+var buttonClicked = false;
 const submitButton = document.getElementById('submit-btn');
 
 $(function() {
@@ -31,8 +31,8 @@ $(function() {
 });
 
 submitButton.addEventListener("click", function() {
-   clicked = true;
-    console.log(clicked);
+   buttonClicked = true;
+    console.log(buttonClicked);
     console.log("El boton esta disabled1");
 });
 
@@ -44,7 +44,7 @@ grecaptcha.ready(function() {
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
            document.getElementById('captchaResponse').value = token;
             
-            if(buttonClicked()) console.log("El boton esta disabled2");
+            if(buttonClicked) console.log("El boton esta disabled2");
             else{
                 urlRedirectJS();
                 submitButton.click();
