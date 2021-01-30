@@ -9,7 +9,6 @@ $(function() {
             $("#ajaxForm").submit(function(e){
                 e.preventDefault();
                 var href = $(this).attr("action");
-                $("#submit-btn").click(function() {
                 $.ajax({
                     type: "POST",
                     dataType: "json",
@@ -23,7 +22,7 @@ $(function() {
                         }
                     }
                 });
-                });
+            $("#submit-btn")[0].click();
             $(this).find(':submit').attr( 'disabled','disabled' );
             });
         });
