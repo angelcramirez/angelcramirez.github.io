@@ -29,15 +29,18 @@ $(function() {
 
 });
 
-// reCAPTCHA Script. Token will not expire until you interact with form
-        grecaptcha.ready(function() {
-            document.getElementById('ajaxForm').addEventListener("submit", function(event) {
-                event.preventDefault();
-                  grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
-                       document.getElementById('captchaResponse').value = token;
-                       urlRedirectJS();
-                   });        
-            }, false);
-             }
-        });
 
+// reCAPTCHA Script. Token will not expire until you interact with form
+grecaptcha.ready(function() {
+    document.getElementById('ajaxForm').addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
+           document.getElementById('captchaResponse').value = token; 
+           urlRedirectJS();
+           submitButton.click();
+
+        });        
+      }, false);
+
+});
