@@ -1,6 +1,5 @@
 // Global variables. Initialization
 urlRedirectJS = null;
-var buttonClicked = false;
 const submitButton = document.getElementById('submit-btn');
 
 $(function() {
