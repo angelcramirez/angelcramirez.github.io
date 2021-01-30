@@ -33,7 +33,6 @@ $(function() {
 submitButton.addEventListener("click", function() {
    buttonClicked = true;
     console.log(buttonClicked);
-    console.log("El boton esta disabled1");
 });
 
 // reCAPTCHA Script. Token will not expire until you interact with form
@@ -44,13 +43,12 @@ grecaptcha.ready(function() {
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
            document.getElementById('captchaResponse').value = token;
             
-            if(submitButton.disabled && buttonClicked) console.log("El boton esta disabled2");
-            else{
+            if(submitButton.disabled && buttonClicked) return false; {
+            }else {
                 urlRedirectJS();
                 submitButton.click();
                 submitButton.disabled = true;
             }
         });        
       }, false);
-
 });
