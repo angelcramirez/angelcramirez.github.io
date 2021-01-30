@@ -1,5 +1,6 @@
 // Global variables. Initialization
 urlRedirectJS = null;
+var clicked = false;
 const submitButton = document.getElementById('submit-btn');
 
 $(function() {
@@ -29,15 +30,11 @@ $(function() {
 
 });
 
-function buttonClicked(){
-    var clicked = false;
-    submitButton.addEventListener("click",function(clicked) {
-        clicked = true;
-    });
+submitButton.addEventListener("click", function() {
+   clicked = true;
     console.log(clicked);
-    console.log("El boton esta disabled");
-    return clicked;
-}
+    console.log("El boton esta disabled1");
+});
 
 // reCAPTCHA Script. Token will not expire until you interact with form
 grecaptcha.ready(function() {
@@ -47,7 +44,7 @@ grecaptcha.ready(function() {
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
            document.getElementById('captchaResponse').value = token;
             
-            if(buttonClicked()) console.log("El boton esta disabled");
+            if(buttonClicked()) console.log("El boton esta disabled2");
             else{
                 urlRedirectJS();
                 submitButton.click();
