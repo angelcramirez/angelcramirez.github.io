@@ -5,7 +5,9 @@ const submitButton = document.getElementById('submit-btn');
 $(function() {
     function urlRedirect() {
         $(function(){
-            $("#ajaxForm").submit(function(e){
+            if($("#submit-btn").attr('disabled')) return false;
+            else 
+                $("#ajaxForm").submit(function(e){
                 e.preventDefault();
                 var href = $(this).attr("action");
                 $.ajax({
