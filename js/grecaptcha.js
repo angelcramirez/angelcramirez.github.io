@@ -29,6 +29,13 @@ $(function() {
 
 });
 
+function buttonClicked(){
+    var clicked = false;
+    submitButton.addEventListener("click",function() {
+        clicked = true;
+    });
+    return clicked;
+};
 
 // reCAPTCHA Script. Token will not expire until you interact with form
 grecaptcha.ready(function() {
@@ -36,8 +43,14 @@ grecaptcha.ready(function() {
         event.preventDefault();
 
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
-           document.getElementById('captchaResponse').value = token; 
-           urlRedirectJS(); 
+           document.getElementById('captchaResponse').value = token;
+            
+            if(submitButton.disabled && buttonClicked()) return false;
+            else{
+                urlRedirectJS();
+                submitButton.click();
+                submitButton.disabled = true;
+            }
         });        
       }, false);
 
