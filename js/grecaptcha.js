@@ -27,6 +27,7 @@ $(function() {
     }
     
     urlRedirectJS = urlRedirect;
+    submitButton.click();
 
 });
 
