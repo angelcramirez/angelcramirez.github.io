@@ -31,7 +31,7 @@ $(function() {
 
 function buttonClicked(){
     var clicked = false;
-    submitButton.addEventListener("click",function() {
+    submitButton.addEventListener("click",function(clicked) {
         clicked = true;
     });
     console.log(clicked);
