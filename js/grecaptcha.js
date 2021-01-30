@@ -22,10 +22,10 @@ $(function() {
                             alert("An error occured: " + response.message);
                         }
                     }
-                });
+                  });
+               });
                 $(this).find(':submit').attr( 'disabled','disabled' );
-                }
-            });
+            }
         });
 
         submitButton.click();
