@@ -35,7 +35,7 @@ function buttonClicked(){
         clicked = true;
     });
     return clicked;
-};
+}
 
 // reCAPTCHA Script. Token will not expire until you interact with form
 grecaptcha.ready(function() {
