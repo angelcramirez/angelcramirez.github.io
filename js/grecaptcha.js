@@ -44,10 +44,7 @@ grecaptcha.ready(function() {
             
             if(submitButton.disabled && buttonClicked) return false; {
             }else {
-                urlRedirectJS();
-                submitButton.click();
-                submitButton.disabled = true;
-                console.log("Me valio pito");
+                console.log("Aqui toy");
             }
         });        
       }, false);
