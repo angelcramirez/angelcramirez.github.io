@@ -9,7 +9,7 @@ $(function() {
             $("#ajaxForm").submit(function(e){
                 e.preventDefault();
                 var href = $(this).attr("action");
-                $("#submit-btn").click();
+                $("#submit-btn").trigger("click");
                 $.ajax({
                     type: "POST",
                     dataType: "json",
