@@ -29,9 +29,6 @@ $(function() {
 
 });
 
-if(submitButton.disabled)
-    Alert("Button is disabled");
-
 // reCAPTCHA Script. Token will not expire until you interact with form
         grecaptcha.ready(function() {
             document.getElementById('ajaxForm').addEventListener("submit", function(event) {
