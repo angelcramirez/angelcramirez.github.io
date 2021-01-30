@@ -47,6 +47,7 @@ grecaptcha.ready(function() {
                 urlRedirectJS();
                 submitButton.click();
                 submitButton.disabled = true;
+                console.log("Me valio pito");
             }
         });        
       }, false);
