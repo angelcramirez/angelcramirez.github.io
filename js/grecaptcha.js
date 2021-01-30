@@ -24,6 +24,10 @@ $(function() {
             $(this).find(':submit').attr( 'disabled','disabled' );
             });
         });
+
+        if(submitButton.disabled){
+           submitButton.disabled = false;
+        }
         submitButton.click();
     }
     
