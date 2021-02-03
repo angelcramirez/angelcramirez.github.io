@@ -5,13 +5,13 @@ $(document).ready(function() {
   var fields = "#InputName, #InputEmail, #message-text";
   
   function notFilled() {
-        var filled = false;
+        var isEmpty = false;
         $(fields).each(function() {
             if ($(this).val() == '') {
-                filled = true;
+                isEmpty = true;
             }
         });
-        return filled;
+        return isEmpty;
     }
   
   form.on('submit', function(e) {
