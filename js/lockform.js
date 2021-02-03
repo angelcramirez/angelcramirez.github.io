@@ -1,12 +1,11 @@
 $(document).ready(function() {
   const lockModal = $("#lock-modal");
   const loadingCircle = $("#loading-circle");
-  const form = $("#my-form");
+  const form = $("#ajaxForm");
 
 
   form.on('submit', function(e) {
     e.preventDefault(); //prevent form from submitting
-
 
     // lock down the form
     lockModal.css("display", "block");
