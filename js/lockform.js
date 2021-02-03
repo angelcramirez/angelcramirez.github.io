@@ -16,7 +16,7 @@ $(document).ready(function() {
   
   form.on('submit', function(e) {
     
-    if (notFilled) console.log("Not filled");
+    if (notFilled) return false;
     else{
     e.preventDefault(); //prevent form from submitting
     
