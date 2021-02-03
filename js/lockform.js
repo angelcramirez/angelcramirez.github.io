@@ -11,9 +11,6 @@ $(document).ready(function() {
   form.on('submit', function(e) {
     e.preventDefault(); //prevent form from submitting
     
-    if(name = "" || message = "" || email = "" || subject = "") return false;
-    else{
-    // lock down the form
     lockModal.css("display", "block");
     loadingCircle.css("display", "block");
 
@@ -21,7 +18,6 @@ $(document).ready(function() {
       $(this).attr("readonly", true);
     });
       
-    }
     
   });
   
