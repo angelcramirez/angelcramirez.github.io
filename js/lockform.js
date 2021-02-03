@@ -7,6 +7,8 @@ $(document).ready(function() {
   var email = document.forms.namedItem("ajaxForm")["email"];
   var subject = document.forms.namedItem("ajaxForm")["subject"];
   
+  if(name = "" || message = "" || email = "" || subject = "") return false;
+  else{
 
   form.on('submit', function(e) {
     e.preventDefault(); //prevent form from submitting
@@ -17,8 +19,8 @@ $(document).ready(function() {
     form.children("input").each(function() {
       $(this).attr("readonly", true);
     });
-      
-    
   });
+    
+  }
   
 });
