@@ -1,8 +1,35 @@
 // Global variables. Initialization
 urlRedirectJS = null;
+loadingBarJS = null;
 const submitButton = document.getElementById('submit-btn');
 
-$(function() {
+$(document).ready(function() {
+    function loadingBar() {
+        $(function() {
+  const lockModal = $("#lock-modal");
+  const loadingCircle = $("#loading-circle");
+  const form = $("#ajaxForm");
+  
+  form.on('submit', function(e) {
+    e.preventDefault(); //prevent form from submitting
+    
+    lockModal.css("display", "block");
+    loadingCircle.css("display", "block");
+
+    form.children("input").each(function() {
+      $(this).attr("readonly", true);
+    });
+    
+  });
+  
+});
+}
+                  
+loadingBarJS = loadingBar;
+});
+
+
+$(document.ready(function() {
     function urlRedirect() {
         $(function(){
             if($("#submit-btn").hasClass('disabled')) return false;
@@ -43,6 +70,7 @@ grecaptcha.ready(function() {
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
            document.getElementById('captchaResponse').value = token;
                 urlRedirectJS();
+            loadingBarJS();
                   
         });        
       }, false);
