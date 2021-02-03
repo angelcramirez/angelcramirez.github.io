@@ -9,7 +9,7 @@ $(document).ready(function() {
     var formEmpty = false;
 
    $(this).find('input[type!="hidden"]').each(function () {
-      if ( ! $(this).val() ) { has_empty = true; return false; }
+      if ( ! $(this).val() ) { formEmpty = true; return false; }
    });
 
    if ( formEmpty ) return false; 
