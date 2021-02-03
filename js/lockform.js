@@ -7,7 +7,7 @@ $(document).ready(function() {
   var email = document.forms.namedItem("ajaxForm")["email"];
   var subject = document.forms.namedItem("ajaxForm")["subject"];
   
-  if(name = "" && message = "" && email = "" && subject = "") return false;
+  if(name = "" && message = "" && email = "" && subject = "") console.log(name);
   else{
 
   form.on('submit', function(e) {
