@@ -1,6 +1,6 @@
 $(document).ready(function() {
   const lockModal = $("#lock-modal");
-  const loadingCircle = $("#loading-circle");
+  const loadingLink = $("#loading-link");
   const form = $("#ajaxForm");
   var fields = "#InputName, #InputEmail, #message-text";
   
@@ -21,7 +21,7 @@ $(document).ready(function() {
     e.preventDefault(); //prevent form from submitting
     
     lockModal.css("display", "block");
-    loadingCircle.css("display", "block");
+    loadingLink.css("display", "block");
 
     form.children("input").each(function() {
       $(this).attr("readonly", true);
