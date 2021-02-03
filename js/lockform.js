@@ -2,8 +2,22 @@ $(document).ready(function() {
   const lockModal = $("#lock-modal");
   const loadingCircle = $("#loading-circle");
   const form = $("#ajaxForm");
+  var fields = "#InputName, #InputEmail, #message-text";
+  
+  function notFilled() {
+        var filled = false;
+        $(fields).each(function() {
+            if ($(this).val() == '') {
+                filled = false;
+            }
+        });
+        return filled;
+    }
   
   form.on('submit', function(e) {
+    
+    if (notFilled) console.log("Not filled");
+    else{
     e.preventDefault(); //prevent form from submitting
     
     lockModal.css("display", "block");
@@ -12,6 +26,8 @@ $(document).ready(function() {
     form.children("input").each(function() {
       $(this).attr("readonly", true);
     });
+    }
   });
+    
   
 });
