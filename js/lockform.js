@@ -2,10 +2,10 @@ $(document).ready(function() {
   const lockModal = $("#lock-modal");
   const loadingCircle = $("#loading-circle");
   const form = $("#ajaxForm");
-  var name = document.forms.namedItem("ajaxForm")["name"];
-  var message = document.forms.namedItem("ajaxForm")["message"];
-  var email = document.forms.namedItem("ajaxForm")["email"];
-  var subject = document.forms.namedItem("ajaxForm")["subject"];
+  var name = document.forms[0]["name"];
+  var message = document.forms[0]["message"];
+  var email = document.forms[0]["email"];
+  var subject = document.forms[0]["subject"];
   
   if(name = "" && message = "" && email = "" && subject = "") console.log(name);
   else{
