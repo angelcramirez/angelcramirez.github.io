@@ -8,7 +8,7 @@ $(document).ready(function() {
         var filled = false;
         $(fields).each(function() {
             if ($(this).val() == '') {
-                filled = false;
+                filled = true;
             }
         });
         return filled;
