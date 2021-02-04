@@ -1,8 +1,39 @@
 // Global variables. Initialization
 urlRedirectJS = null;
+submitLoadingJS = null;
 const submitButton = document.getElementById('submit-btn');
+const lockModal = $("#lock-modal");
+const loadingLink = $("#loading-link");
+const form = $("#ajaxForm");
+var fields = "#InputName, #InputEmail, #message-text";
+  
+
 
 $(function() {
+    function notFilled() {
+        var isEmpty = false;
+        $(fields).each(function() {
+            if ($(this).val() == '') {
+                isEmpty = true;
+            }
+        });
+        return isEmpty;
+    }
+
+    function submitLoading() {
+    if (notFilled()) return false;
+    else{
+    e.preventDefault(); //prevent form from submitting
+    
+    lockModal.css("display", "block");
+    loadingLink.css("display", "block");
+
+    form.children("input").each(function() {
+      $(this).attr("readonly", true);
+    });
+    }
+    }
+
     function urlRedirect() {
         $(function(){
             if($("#submit-btn").hasClass('disabled')) return false;
@@ -32,7 +63,7 @@ $(function() {
     }
     
     urlRedirectJS = urlRedirect;
-
+    submitLoadingJS = submitLoading;
 });
 
 // reCAPTCHA Script. Token will not expire until you interact with form
@@ -42,7 +73,8 @@ grecaptcha.ready(function() {
 
         grecaptcha.execute('6Lcro7IZAAAAAG934YEUBJBAKIMKAHuaXy7Dj0xY', {action: 'homepage'}).then(function(token) {
            document.getElementById('captchaResponse').value = token;
-                urlRedirectJS();
+              urlRedirectJS();
+              submitLoadingJS();
                   
         });        
       }, false);
