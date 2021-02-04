@@ -8,9 +8,7 @@ const form = $("#ajaxForm");
 var fields = "#InputName, #InputEmail, #message-text";
   
 
-
-$(function() {
-   
+$(document).ready(function() {
     function submitLoading() {
     $(function(){
     if($("#submit-btn").hasClass('disabled')) return false;
