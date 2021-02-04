@@ -5,7 +5,7 @@ const submitButton = document.getElementById('submit-btn');
 const lockModal = $("#lock-modal");
 const loadingLink = $("#loading-link");
 const form = $("#ajaxForm");
-var fields = "#InputName, #InputEmail, #message-text";
+//var fields = "#InputName, #InputEmail, #message-text";
   
 
 $(document).ready(function() {
