@@ -15,6 +15,10 @@ $(function() {
     $(function(){
     if($("#submit-btn").hasClass('disabled')) return false;
     else{
+    form.on('submit', function(e) {
+    
+    if (notFilled()) return false;
+    else{
     e.preventDefault(); //prevent form from submitting
     
     lockModal.css("display", "block");
@@ -25,7 +29,8 @@ $(function() {
     });
     }
     });
-    }
+    });
+  }
 
     function urlRedirect() {
         $(function(){
