@@ -21,6 +21,7 @@ $(function() {
     }
 
     function submitLoading() {
+    $(function(){
     if (notFilled()) return false;
     else{
     e.preventDefault(); //prevent form from submitting
@@ -32,6 +33,7 @@ $(function() {
       $(this).attr("readonly", true);
     });
     }
+    });
     }
 
     function urlRedirect() {
