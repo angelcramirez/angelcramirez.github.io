@@ -10,19 +10,10 @@ var fields = "#InputName, #InputEmail, #message-text";
 
 
 $(function() {
-    function notFilled() {
-        var isEmpty = false;
-        $(fields).each(function() {
-            if ($(this).val() == '') {
-                isEmpty = true;
-            }
-        });
-        return isEmpty;
-    }
-
+   
     function submitLoading() {
     $(function(){
-    if (notFilled()) return false;
+    if($("#submit-btn").hasClass('disabled')) return false;
     else{
     e.preventDefault(); //prevent form from submitting
     
